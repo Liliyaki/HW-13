@@ -11,11 +11,6 @@ public class Order {
         this.basket = basket;
     }
 
-    @Override
-    public String toString() {
-        return "Заказ [клиент=" + customer + ", корзина=" + Arrays.toString(basket) + "]";
-    }
-
     public String getCustomer() {
         return customer;
     }
@@ -25,10 +20,18 @@ public class Order {
     }
 
     @Override
+    public String toString() {
+        return "Заказ [клиент=" + customer + ", корзина=" + Arrays.toString(basket) + "]";
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Order order = (Order) o;
+        if (!Objects.equals(customer, order.customer)) {
+            return false;
+        }
         if (basket == null && order.basket == null) return true;
         if (basket == null || order.basket == null) return false;
         if (basket.length != order.basket.length) return false;
@@ -42,3 +45,4 @@ public class Order {
         return true;
     }
 }
+

@@ -20,7 +20,7 @@ public class Main {
         Product[] basket3 = {product2, product1};
         Product[] basket4 = {product3, product4};
         Order order1 = new Order("Наталья", basket1);
-        Order order2 = new Order("Илья", basket2);
+        Order order2 = new Order("Наталья", basket2);
         Order order3 = new Order("Николай", basket3);
         Order order4 = new Order("Алексей", basket4);
         System.out.println(order1);
